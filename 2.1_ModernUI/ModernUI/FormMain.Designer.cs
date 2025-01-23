@@ -51,7 +51,7 @@
             // 
             // panelMenu
             // 
-            this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(42)))), ((int)(((byte)(73)))));
             this.panelMenu.Controls.Add(this.btnSettings);
             this.panelMenu.Controls.Add(this.btnNotifications);
             this.panelMenu.Controls.Add(this.btnReporting);
@@ -70,7 +70,7 @@
             this.btnSettings.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnSettings.FlatAppearance.BorderSize = 0;
             this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSettings.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSettings.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSettings.Image = global::ModernUI.Properties.Resources.settings;
             this.btnSettings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSettings.Location = new System.Drawing.Point(0, 375);
@@ -86,10 +86,11 @@
             // 
             // btnNotifications
             // 
+            this.btnNotifications.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(58)))), ((int)(((byte)(101)))));
             this.btnNotifications.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnNotifications.FlatAppearance.BorderSize = 0;
             this.btnNotifications.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNotifications.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNotifications.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNotifications.Image = global::ModernUI.Properties.Resources.alarm;
             this.btnNotifications.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnNotifications.Location = new System.Drawing.Point(0, 315);
@@ -100,7 +101,7 @@
             this.btnNotifications.Text = "   Notifications";
             this.btnNotifications.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnNotifications.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnNotifications.UseVisualStyleBackColor = true;
+            this.btnNotifications.UseVisualStyleBackColor = false;
             this.btnNotifications.Click += new System.EventHandler(this.btnNotifications_Click);
             // 
             // btnReporting
@@ -108,7 +109,7 @@
             this.btnReporting.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnReporting.FlatAppearance.BorderSize = 0;
             this.btnReporting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReporting.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReporting.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReporting.Image = global::ModernUI.Properties.Resources.bar_chart;
             this.btnReporting.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnReporting.Location = new System.Drawing.Point(0, 255);
@@ -127,7 +128,7 @@
             this.btnCustomer.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnCustomer.FlatAppearance.BorderSize = 0;
             this.btnCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCustomer.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCustomer.Image = global::ModernUI.Properties.Resources.customer;
             this.btnCustomer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCustomer.Location = new System.Drawing.Point(0, 195);
@@ -146,7 +147,7 @@
             this.btnOrders.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnOrders.FlatAppearance.BorderSize = 0;
             this.btnOrders.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOrders.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOrders.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOrders.Image = global::ModernUI.Properties.Resources.shopping_list;
             this.btnOrders.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnOrders.Location = new System.Drawing.Point(0, 135);
@@ -165,7 +166,7 @@
             this.btnProduct.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnProduct.FlatAppearance.BorderSize = 0;
             this.btnProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProduct.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProduct.Image = global::ModernUI.Properties.Resources.shopping_cart;
             this.btnProduct.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnProduct.Location = new System.Drawing.Point(0, 75);

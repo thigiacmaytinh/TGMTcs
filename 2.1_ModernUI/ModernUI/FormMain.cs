@@ -60,6 +60,7 @@ namespace ModernUI
 
         Color SelectThemeColor(Button btn)
         {
+            return Color.FromArgb(15, 58, 101);
             int index = FindIndexOfBtn(btn);
             string color = ThemeColor.ColorList[index];
             return ColorTranslator.FromHtml(color);
@@ -77,7 +78,7 @@ namespace ModernUI
                     Color color = SelectThemeColor(currentButton);                    
                     currentButton.BackColor = color;
                     currentButton.ForeColor = Color.White;
-                    currentButton.Font = new Font("Microsoft Sans Serif", 12.5F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
+                    currentButton.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, ((byte)(0)));
 
                     panelTitleBar.BackColor = color;
                     panelLogo.BackColor = ThemeColor.ChangeColorBrightness(color, -0.3);
@@ -94,9 +95,9 @@ namespace ModernUI
             {
                 if (previousBtn.GetType() == typeof(Button))
                 {
-                    previousBtn.BackColor = Color.FromArgb(51, 51, 76);
+                    previousBtn.BackColor = Color.FromArgb(11, 42, 73);
                     previousBtn.ForeColor = Color.Gainsboro;
-                    previousBtn.Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
+                    previousBtn.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
                 }
             }            
         }
