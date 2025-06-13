@@ -35,7 +35,7 @@ namespace WebcamAforge
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            InitCamera();
+            LoadWebcam();
         }
 
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -46,28 +46,9 @@ namespace WebcamAforge
         }
 
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-        void InitCamera()
+        private void cb_webcam_SelectedIndexChanged(object sender, EventArgs e)
         {
-            cbCamera.Items.Clear();
-
-            FilterInfoCollection videosources = new FilterInfoCollection(FilterCategory.VideoInputDevice);
-
-            if (videosources.Count == 0)
-            {                
-                return;
-            }
-
-
-            for (int i = 0; i < videosources.Count; i++)
-            {
-                cbCamera.Items.Add(videosources[i].Name);
-            }
-            cbCamera.Enabled = true;
-            if (cbCamera.Items.Count == 1)
-            {
-                cbCamera.SelectedIndex = 0;
-            }
+            LoadResolution();
         }
 
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -86,20 +67,42 @@ namespace WebcamAforge
 
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+        void LoadWebcam()
+        {
+            cb_webcam.Items.Clear();
+
+            FilterInfoCollection videosources = new FilterInfoCollection(FilterCategory.VideoInputDevice);
+
+            if (videosources.Count == 0)
+                return;
+
+
+            for (int i = 0; i < videosources.Count; i++)
+            {
+                cb_webcam.Items.Add(videosources[i].Name);
+            }
+            cb_webcam.Enabled = true;
+            if (cb_webcam.Items.Count == 1)
+            {
+                cb_webcam.SelectedIndex = 0;
+            }
+        }
+
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
         void StartWebcam()
         {
-            if (cbCamera.Items.Count == 0 || cbCamera.SelectedIndex == -1)
+            if (cb_webcam.Items.Count == 0 || cb_webcam.SelectedIndex == -1)
                 return;
             if (m_videoSource != null)
             {
                 m_videoSource.Stop();
             }
-            else
-            {
-                FilterInfoCollection videosources = new FilterInfoCollection(FilterCategory.VideoInputDevice);
-                m_videoSource = new VideoCaptureDevice(videosources[cbCamera.SelectedIndex].MonikerString);
-                m_videoSource.VideoResolution = selectResolution(m_videoSource); ;
-            }
+
+            FilterInfoCollection videosources = new FilterInfoCollection(FilterCategory.VideoInputDevice);
+            m_videoSource = new VideoCaptureDevice(videosources[cb_webcam.SelectedIndex].MonikerString);
+            m_videoSource.VideoResolution = selectResolution(m_videoSource, cb_resolution.SelectedIndex);
+            
 
             m_videoSource.NewFrame += new NewFrameEventHandler(OnCameraFrame);
             m_videoSource.Start();
@@ -107,24 +110,30 @@ namespace WebcamAforge
 
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        VideoCapabilities selectResolution(VideoCaptureDevice device)
+        void LoadResolution()
         {
-            foreach (var cap in device.VideoCapabilities)
+            if (cb_webcam.Items.Count == 0)
+                return;
+
+            FilterInfoCollection videosources = new FilterInfoCollection(FilterCategory.VideoInputDevice);
+            VideoCaptureDevice videoSource = new VideoCaptureDevice(videosources[cb_webcam.SelectedIndex].MonikerString);
+
+            cb_resolution.Items.Clear();
+            foreach (var cap in videoSource.VideoCapabilities)
             {
-                if (cap.FrameSize.Height == 1080)
-                {
-                    m_aspect = (double)cap.FrameSize.Width / cap.FrameSize.Height;
-                    return cap;
-                }
-
-                if (cap.FrameSize.Width == 1920)
-                {
-                    m_aspect = (double)cap.FrameSize.Width / cap.FrameSize.Height;
-                    return cap;
-                }
+                cb_resolution.Items.Add(cap.FrameSize.Width + "x" + cap.FrameSize.Height);
             }
+            if (cb_resolution.Items.Count > 0)
+            {
+                cb_resolution.SelectedIndex = 0;
+            }
+        }
 
-            VideoCapabilities videoCap = device.VideoCapabilities.Last();
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        VideoCapabilities selectResolution(VideoCaptureDevice device, int resolutionIndex)
+        {
+            VideoCapabilities videoCap = device.VideoCapabilities[resolutionIndex];
             m_aspect = (double)videoCap.FrameSize.Width / videoCap.FrameSize.Height;
             return videoCap;
         }
@@ -147,7 +156,5 @@ namespace WebcamAforge
             //m_bmp = (Bitmap)eventArgs.Frame.Clone();
             picWebcam.Image = new Bitmap(eventArgs.Frame);
         }
-
-        
     }
 }
