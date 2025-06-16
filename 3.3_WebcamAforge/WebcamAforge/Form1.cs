@@ -35,6 +35,7 @@ namespace WebcamAforge
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            picWebcam.ImageLocation = "webcam_aforge.jpg";
             LoadWebcam();
         }
 
@@ -153,7 +154,6 @@ namespace WebcamAforge
 
         void OnCameraFrame(object sender, NewFrameEventArgs eventArgs)
         { 
-            //m_bmp = (Bitmap)eventArgs.Frame.Clone();
             picWebcam.Image = new Bitmap(eventArgs.Frame);
         }
     }
