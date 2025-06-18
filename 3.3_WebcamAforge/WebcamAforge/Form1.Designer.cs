@@ -29,17 +29,18 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cb_resolution = new System.Windows.Forms.ComboBox();
             this.cb_webcam = new System.Windows.Forms.ComboBox();
             this.btn_stop = new System.Windows.Forms.Button();
             this.btn_start = new System.Windows.Forms.Button();
             this.picWebcam = new System.Windows.Forms.PictureBox();
-            this.cb_resolution = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picWebcam)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(240)))), ((int)(((byte)(250)))));
             this.panel1.Controls.Add(this.cb_resolution);
             this.panel1.Controls.Add(this.cb_webcam);
             this.panel1.Controls.Add(this.btn_stop);
@@ -47,8 +48,18 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 77);
+            this.panel1.Size = new System.Drawing.Size(800, 70);
             this.panel1.TabIndex = 0;
+            // 
+            // cb_resolution
+            // 
+            this.cb_resolution.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_resolution.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.cb_resolution.FormattingEnabled = true;
+            this.cb_resolution.Location = new System.Drawing.Point(303, 23);
+            this.cb_resolution.Name = "cb_resolution";
+            this.cb_resolution.Size = new System.Drawing.Size(171, 27);
+            this.cb_resolution.TabIndex = 5;
             // 
             // cb_webcam
             // 
@@ -64,7 +75,7 @@
             // btn_stop
             // 
             this.btn_stop.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_stop.Location = new System.Drawing.Point(533, 23);
+            this.btn_stop.Location = new System.Drawing.Point(574, 23);
             this.btn_stop.Name = "btn_stop";
             this.btn_stop.Size = new System.Drawing.Size(88, 28);
             this.btn_stop.TabIndex = 1;
@@ -75,7 +86,7 @@
             // btn_start
             // 
             this.btn_start.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_start.Location = new System.Drawing.Point(439, 23);
+            this.btn_start.Location = new System.Drawing.Point(480, 23);
             this.btn_start.Name = "btn_start";
             this.btn_start.Size = new System.Drawing.Size(88, 28);
             this.btn_start.TabIndex = 0;
@@ -87,22 +98,12 @@
             // 
             this.picWebcam.BackColor = System.Drawing.Color.White;
             this.picWebcam.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.picWebcam.Location = new System.Drawing.Point(0, 77);
+            this.picWebcam.Location = new System.Drawing.Point(0, 70);
             this.picWebcam.Name = "picWebcam";
-            this.picWebcam.Size = new System.Drawing.Size(800, 373);
+            this.picWebcam.Size = new System.Drawing.Size(800, 380);
             this.picWebcam.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picWebcam.TabIndex = 26;
             this.picWebcam.TabStop = false;
-            // 
-            // cb_resolution
-            // 
-            this.cb_resolution.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cb_resolution.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.cb_resolution.FormattingEnabled = true;
-            this.cb_resolution.Location = new System.Drawing.Point(303, 23);
-            this.cb_resolution.Name = "cb_resolution";
-            this.cb_resolution.Size = new System.Drawing.Size(130, 27);
-            this.cb_resolution.TabIndex = 5;
             // 
             // Form1
             // 

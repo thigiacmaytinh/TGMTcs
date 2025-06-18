@@ -122,7 +122,7 @@ namespace WebcamAforge
             cb_resolution.Items.Clear();
             foreach (var cap in videoSource.VideoCapabilities)
             {
-                cb_resolution.Items.Add(cap.FrameSize.Width + "x" + cap.FrameSize.Height);
+                cb_resolution.Items.Add(cap.FrameSize.Width + "x" + cap.FrameSize.Height + " (" + cap.MaximumFrameRate + " FPS)");
             }
             if (cb_resolution.Items.Count > 0)
             {
@@ -135,6 +135,9 @@ namespace WebcamAforge
         VideoCapabilities selectResolution(VideoCaptureDevice device, int resolutionIndex)
         {
             VideoCapabilities videoCap = device.VideoCapabilities[resolutionIndex];
+            if (videoCap == null)
+                return null;
+
             m_aspect = (double)videoCap.FrameSize.Width / videoCap.FrameSize.Height;
             return videoCap;
         }
